@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de Matemáticas con JavaScript</title>
+</head>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vw;
+  }
+</style>
+
+<body>
+  <label>Ingrese numero total</label>
+  <input id="total" type="number" />
+  <label>Ingrese porcentaje a aplicar</label>
+  <input id="percentage" type="number" />
+  <button id="calculate">Calcular descuento</button>
+  <p id="result"></p>
+  <script>
+    //
+    const inputTotal = document.querySelector("#total");
+    const inputPercentage = document.querySelector("#percentage");
+    const btn = document.querySelector("#calculate");
+    const result = document.querySelector("#result")
+    btn.addEventListener('click', () => {
+      let total = inputTotal.value;
+      let percentage = inputPercentage.value;
+      if (!total || !percentage) {
+        alert("Ingrese numeros a calcular")
+      } else {
+        const newValue = ((percentage * total) / 100);
+        console.log(`total = ${total}`);
+        console.log(`porcentaje = ${percentage}`);
+        console.log(`resultado = ${newValue}`);
+        result.innerText = "El numero con el porcentaje/descuento aplicado es: " + newValue;
+      }
+    });
+  </script>
+</body>
+
+</html>
