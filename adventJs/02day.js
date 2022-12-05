@@ -33,3 +33,4 @@ function countHours(year, holidays) {
 
 console.log(typeof countHours(year, holidays));
 countHours(year, holidays) // 2 días -> 4 horas extra en el año
+
